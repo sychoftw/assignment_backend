@@ -7,9 +7,14 @@ const path = require("path");
 const authMiddleware = require('./middleware/authMiddleware');
 const router = express.Router();
 const cors = require("cors");
-
+const  dotenv =require("dotenv") ;
+dotenv.config();
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+  origin:process.env.FRONTEND_URL,
+  credentials: true,
+}));
+console.log(process.env.FRONTEND_URL)
 
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
