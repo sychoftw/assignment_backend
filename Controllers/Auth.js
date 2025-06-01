@@ -101,7 +101,7 @@ async function getEmployse(req, res) {
 
     const users = await prisma.t_Employee.findFirst({
       where: {
-        id: id, // 👈 id is already a string
+        id: id, 
       },
     });
 
@@ -133,7 +133,7 @@ async function deleteEmploye(req, res) {
 
     const deletedUser = await prisma.t_Employee.delete({
       where: {
-        id: id,  // assuming id is string in your Prisma schema
+        id: id, 
       },
     });
 
@@ -151,7 +151,7 @@ async function deleteEmploye(req, res) {
     return res.status(500).json({
       success: false,
       message: "Failed to delete",
-      error: error.message,  // send error message for debugging
+      error: error.message, 
     });
   }
 }

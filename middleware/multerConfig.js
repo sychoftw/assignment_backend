@@ -1,8 +1,7 @@
-// middleware/multerConfig.js
+
 const multer = require("multer");
 const path = require("path");
 
-// Storage config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
@@ -12,7 +11,6 @@ const storage = multer.diskStorage({
   },
 });
 
-// File filter
 const fileFilter = (req, file, cb) => {
   const allowedTypes = /jpeg|jpg|png/;
   const isValid = allowedTypes.test(file.mimetype);
