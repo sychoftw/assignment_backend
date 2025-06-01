@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: assignment-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        value: LIFELINKR
+      - key: ADMINS_USERNAME
+        value: USERNAME
+      - key: ADMINS_PASSWORD
+        value: PASSWORD
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_h2B0RPwNztDr@ep-restless-heart-a8txvpjs-pooler.eastus2.azure.neon.tech/neondb?sslmode=require
+
+
+
